@@ -25,12 +25,12 @@ class TrafficLight:
 
     def switch_to_green(self):
         self.green_signal = True
-        print(f"Traffic Light {self.id} is GREEN for {self.green_time} seconds.")
+        print(f"Светофор {self.id} горит ЗЕЛЕНЫМ в течение {self.green_time} секунд.")
         time.sleep(self.green_time)  # Симуляция времени зеленого сигнала
 
     def switch_to_red(self):
         self.green_signal = False
-        print(f"Traffic Light {self.id} is RED for {self.red_time} seconds.")
+        print(f"Светофор {self.id} горит КРАСНЫМ в течение {self.red_time} секунд.")
         time.sleep(self.red_time)  # Симуляция времени красного сигнала
 
     def run(self, k1, k2):
@@ -72,8 +72,8 @@ class TrafficLightSystem:
         stop_thread.join()
 
     def wait_for_stop_command(self):
-        input("Press Enter to stop the traffic lights and exit...\n")  # Ожидание нажатия клавиши
-        print("Stopping traffic lights...")
+        input("Нажмите Enter, чтобы остановить светофор и выйти...\n")  # Ожидание нажатия клавиши
+        print("Идет остановка всех светофоров...")
         self.stop_event.set()  # Установка события остановки
 
 if __name__ == "__main__":
